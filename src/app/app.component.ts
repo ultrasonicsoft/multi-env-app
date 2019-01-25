@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'multiple-env-demo';
+  environmentName = '';
+  environmentUrl = 'Debug api';
+
+  constructor() {
+    this.environmentName = environment.environmentName;
+    this.environmentUrl = environment.apiUrl;
+  }
 }
